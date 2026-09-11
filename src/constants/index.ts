@@ -86,7 +86,7 @@ const experiences: TExperience[] = [
   },
   {
     title: 'Junior Laravel Developer',
-    companyName: 'Alakmalak Technologies',
+    companyName: 'Alakmalak Technologies — Ahmedabad',
     marker: 'AT',
     date: '2021',
     points: [
