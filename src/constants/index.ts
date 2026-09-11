@@ -73,7 +73,7 @@ const skillGroups: TSkillGroup[] = [
 
 const experiences: TExperience[] = [
   {
-    title: 'Laravel Developer',
+    title: 'Senior Web Developer',
     companyName: 'Yudiz Solutions — Ahmedabad',
     marker: 'YS',
     date: 'Feb 2022 - May 2026',
@@ -85,7 +85,7 @@ const experiences: TExperience[] = [
     ],
   },
   {
-    title: 'Laravel Developer',
+    title: 'Junior Laravel Developer',
     companyName: 'Alakmalak Technologies',
     marker: 'AT',
     date: '2021',
