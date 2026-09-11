@@ -32,6 +32,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_AVAILABILITY_STATUS: ${{ vars.VITE_AVAILABILITY_STATUS }}
+          VITE_WORK_PREFERENCE: ${{ vars.VITE_WORK_PREFERENCE }}
+          VITE_REMOTE_TIMEZONE: ${{ vars.VITE_REMOTE_TIMEZONE }}
+          VITE_TARGET_ROLE: ${{ vars.VITE_TARGET_ROLE }}
+          VITE_LINKEDIN_URL: ${{ vars.VITE_LINKEDIN_URL }}
+          VITE_GITHUB_URL: ${{ vars.VITE_GITHUB_URL }}
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site

@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { styles } from "../../constants/styles";
-import { config } from "../../constants/config";
+import { styles } from '../../constants/styles';
+import { config } from '../../constants/config';
 
 const Hero = () => {
   return (
@@ -16,12 +16,12 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="mb-7 flex flex-wrap gap-3">
-              <span className="availability-chip">Open to remote</span>
-              <span className="availability-chip">Open to onsite</span>
-              <span className="availability-chip">Available for freelance</span>
+              <span className="availability-chip">{config.availability.status}</span>
+              <span className="availability-chip">{config.availability.workPreference}</span>
+              <span className="availability-chip">Freelance projects welcome</span>
             </div>
             <p className="text-accent mb-3 text-sm font-semibold uppercase tracking-[0.24em] sm:text-base">
-              Software Developer · PHP / Laravel
+              {config.availability.targetRole} · PHP / Laravel
             </p>
             <h1 className={`${styles.heroHeadText} max-w-4xl text-white`}>
               Hi, I&apos;m <span className="text-[#62e8bd]">{config.hero.name}</span>
@@ -38,6 +38,26 @@ const Hero = () => {
               <a className="secondary-cta" href={config.html.resumePath} download>
                 Download résumé
               </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-5 text-sm font-semibold">
+              <a
+                className="social-link"
+                href={config.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+              <a
+                className="social-link"
+                href={config.social.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub ↗
+              </a>
+              <span className="text-secondary">{config.availability.timezone}</span>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-secondary sm:text-base">
