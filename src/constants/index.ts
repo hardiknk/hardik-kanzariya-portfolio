@@ -98,12 +98,12 @@ const experiences: TExperience[] = [
 
 const projects: TProject[] = [
   {
-    name: 'WeWrite',
+    name: 'AI-Assisted Collaborative Writing Platform',
     category: 'AI-assisted collaborative writing platform',
     description:
-      'A React Native application where users create digital books and write them collaboratively through controlled, turn-based contributions.',
+      'A mobile-first platform where users create digital books and write them collaboratively through controlled, turn-based contributions.',
     responsibilities: [
-      'Developed the Laravel administration panel and REST APIs used by the React Native application.',
+      'Developed the Laravel administration panel and REST APIs consumed by the mobile application; the mobile client was handled by a separate frontend team.',
       'Implemented book settings for contributor count, writing duration, contribution limits, and writing rounds.',
       'Built the turn-based contribution workflow and book-owner editing controls.',
       'Integrated the OpenAI API to generate story content from a book title and contributor descriptions.',
@@ -115,17 +115,17 @@ const projects: TProject[] = [
     tags: [
       { name: 'Laravel' },
       { name: 'REST APIs' },
-      { name: 'React Native' },
+      { name: 'Mobile APIs' },
       { name: 'OpenAI API' },
     ],
   },
   {
-    name: 'One Percentage',
+    name: 'Subscription Learning & Video Platform',
     category: 'Subscription-based learning platform',
     description:
-      'A mobile learning platform offering six subscription-based courses with video lectures, progress tracking, referrals, and direct communication with administrators.',
+      'A mobile learning platform offering multiple subscription-based courses with video lectures, progress tracking, referrals, and direct communication with administrators.',
     responsibilities: [
-      'Developed the Laravel admin panel and REST APIs for the React Native application.',
+      'Developed the Laravel admin panel and REST APIs consumed by the mobile application; the mobile client was handled by a separate frontend team.',
       'Implemented course, lecture, subscription, progress, and referral-reporting workflows.',
       'Built real-time socket communication between users and administrators.',
       'Created a custom roles and permissions implementation without relying on a third-party package.',
@@ -137,19 +137,19 @@ const projects: TProject[] = [
       'Enabled reliable large-video delivery by uploading files in smaller chunks while preserving subscription-based course access.',
     tags: [
       { name: 'Laravel' },
-      { name: 'React Native' },
+      { name: 'Mobile APIs' },
       { name: 'WebSockets' },
       { name: 'AWS S3' },
       { name: 'Chunked uploads' },
     ],
   },
   {
-    name: 'Coaching Centre Management Platform',
+    name: 'Location-Based Sports Coaching Platform',
     category: 'Location-based, multi-portal sports coaching platform',
     description:
       'A platform connecting students with nearby sports coaching centres through separate student, coaching-centre, staff, and super-admin applications.',
     responsibilities: [
-      'Developed the shared Laravel backend, REST APIs, and Blade-based administration portals.',
+      'Developed the shared Laravel backend and REST APIs consumed by the mobile application, along with the Blade-based administration portals.',
       'Converted static HTML and CSS designs into dynamic Laravel Blade interfaces.',
       'Implemented centre registration and approval, sport and distance filtering, enrolment, attendance, activities, and video workflows.',
       'Built Razorpay fee collection, booking-based and standard commission calculations, and centre settlement workflows.',
@@ -163,7 +163,7 @@ const projects: TProject[] = [
     tags: [
       { name: 'Laravel' },
       { name: 'Blade' },
-      { name: 'React Native' },
+      { name: 'Mobile APIs' },
       { name: 'Razorpay' },
       { name: 'AWS S3' },
       { name: 'Firebase' },

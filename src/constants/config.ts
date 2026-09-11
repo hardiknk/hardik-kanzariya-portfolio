@@ -109,13 +109,13 @@ export const config: TConfig = {
       h2: 'Work Experience.',
     },
     feedbacks: {
-      p: 'Education, languages, and interests',
-      h2: 'Beyond the code.',
+      p: 'Education, languages, and professional focus',
+      h2: 'Background & Focus.',
     },
     works: {
       p: 'Selected professional work',
       h2: 'Project Case Studies.',
-      content: `These anonymized case studies show how I approach backend architecture, application workflows, integrations, and team delivery. Client information, source code, screenshots, and live links remain confidential.`,
+      content: `These anonymized case studies show how I approach backend architecture, application workflows, integrations, and team delivery. My contribution focused on Laravel backends, administration portals, and APIs consumed by mobile applications; the mobile clients were developed by separate frontend teams. Client information, source code, screenshots, and live links remain confidential.`,
     },
     skills: {
       p: 'Tools I use to deliver',

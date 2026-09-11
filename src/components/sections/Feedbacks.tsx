@@ -43,9 +43,10 @@ const Feedbacks = () => {
             </div>
           </article>
           <article className="profile-panel">
-            <p className="section-kicker">Interests</p>
+            <p className="section-kicker">Professional Focus</p>
             <p className="mt-4 leading-7 text-secondary">
-              Swimming and continuously learning new AI tools for practical software development.
+              Designing reliable Laravel APIs, improving backend performance, integrating AI and cloud services,
+              mentoring developers, and turning business requirements into maintainable products.
             </p>
           </article>
         </motion.div>
