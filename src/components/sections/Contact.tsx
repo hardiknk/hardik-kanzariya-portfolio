@@ -17,8 +17,8 @@ const Contact = () => {
 
         <p className="mt-8 max-w-xl text-[17px] leading-8 text-secondary">
           I&apos;m available to join within seven days and open to remote roles across time zones,
-          onsite opportunities in Ahmedabad, and freelance backend projects. Tell me what
-          you&apos;re building and where you need help.
+          onsite opportunities in Ahmedabad, relocation, and freelance backend projects. Tell me
+          what you&apos;re building and where you need help.
         </p>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">

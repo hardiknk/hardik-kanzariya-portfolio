@@ -76,11 +76,11 @@ const experiences: TExperience[] = [
     title: 'Laravel Developer',
     companyName: 'Yudiz Solutions — Ahmedabad',
     marker: 'YS',
-    date: '2022 - 2026',
+    date: 'Feb 2022 - May 2026',
     points: [
       'Developed and maintained scalable web applications with Laravel.',
       'Built RESTful APIs for mobile app teams and implemented real-time chat using sockets.',
-      'Collaborated with cross-functional teams to deliver projects on schedule.',
+      'Supported team delivery through task assignment, junior-developer mentoring, pull-request reviews, and cross-functional collaboration.',
       'Migrated 12 applications to Laravel, improving maintainability and performance.',
     ],
   },

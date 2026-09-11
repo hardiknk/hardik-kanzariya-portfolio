@@ -56,7 +56,7 @@ const envValue = (value: string | undefined, fallback: string) => value?.trim() 
 
 export const config: TConfig = {
   html: {
-    title: 'Hardik Kanzariya | Laravel Developer',
+    title: 'Hardik Kanzariya | Senior Laravel Developer',
     fullName: 'Hardik Kanzariya',
     email: 'kanzariyahardik8511@gmail.com',
     phone: '+91 7046130837',
@@ -66,15 +66,21 @@ export const config: TConfig = {
   hero: {
     name: 'Hardik Kanzariya',
     p: [
-      'PHP / Laravel developer with 5+ years of experience',
-      'building scalable web applications, APIs, and cloud solutions.',
+      'Laravel developer with 5+ years of experience',
+      'building scalable applications, designing APIs, and supporting team delivery.',
     ],
   },
   availability: {
     status: envValue(import.meta.env.VITE_AVAILABILITY_STATUS, 'Available within 7 days'),
-    workPreference: envValue(import.meta.env.VITE_WORK_PREFERENCE, 'Ahmedabad or remote'),
+    workPreference: envValue(
+      import.meta.env.VITE_WORK_PREFERENCE,
+      'Ahmedabad · Remote · Open to relocate'
+    ),
     timezone: envValue(import.meta.env.VITE_REMOTE_TIMEZONE, 'Flexible across time zones'),
-    targetRole: envValue(import.meta.env.VITE_TARGET_ROLE, 'Senior Software Developer'),
+    targetRole: envValue(
+      import.meta.env.VITE_TARGET_ROLE,
+      'Senior Laravel Developer / Technical Lead'
+    ),
   },
   social: {
     linkedin: envValue(
@@ -102,7 +108,7 @@ export const config: TConfig = {
     about: {
       p: 'Professional summary',
       h2: 'Backend-focused. Business-ready.',
-      content: `I build dependable PHP and Laravel products, from database-backed web applications and REST APIs to payment, real-time, and third-party integrations. My work spans backend optimization, application security, MySQL and SQL Server, and AWS services including S3, EC2, Route 53, and RDS. I collaborate comfortably with app, product, and cross-functional teams to ship maintainable solutions on time.`,
+      content: `I build dependable PHP and Laravel products, from database-backed web applications and REST APIs to payment, real-time, and third-party integrations. My work spans backend optimization, application security, MySQL and SQL Server, and AWS services including S3, EC2, Route 53, and RDS. I also support team delivery through task planning, junior-developer mentoring, pull-request reviews, reusable architecture, and cross-functional collaboration.`,
     },
     experience: {
       p: '5+ years in software development',
@@ -115,7 +121,7 @@ export const config: TConfig = {
     works: {
       p: 'Selected professional work',
       h2: 'Project Case Studies.',
-      content: `These anonymized case studies show how I approach backend architecture, application workflows, integrations, and team delivery. My contribution focused on Laravel backends, administration portals, and APIs consumed by mobile applications; the mobile clients were developed by separate frontend teams. Client information, source code, screenshots, and live links remain confidential.`,
+      content: `These anonymized case studies show how I approach backend architecture, application workflows, integrations, and team delivery. Across these multi-module production platforms, I delivered dozens of backend API workflows as part of cross-functional teams of 4–5 people. My contribution focused on Laravel backends, administration portals, and APIs consumed by mobile applications; the mobile clients were developed by separate frontend teams. Client information, source code, screenshots, and live links remain confidential.`,
     },
     skills: {
       p: 'Tools I use to deliver',
