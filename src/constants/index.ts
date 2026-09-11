@@ -1,38 +1,12 @@
 import type {
   TNavLink,
   TService,
-  TTechnology,
   TExperience,
-  TTestimonial,
   TProject,
+  TSkillGroup,
 } from "../types";
 
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
+import { mobile, backend, creator, web } from "../assets";
 
 export const navLinks: TNavLink[] = [
   {
@@ -41,7 +15,15 @@ export const navLinks: TNavLink[] = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Experience",
+  },
+  {
+    id: "skills",
+    title: "Skills",
+  },
+  {
+    id: "expertise",
+    title: "Expertise",
   },
   {
     id: "contact",
@@ -51,224 +33,133 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "Laravel Applications",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "REST & Real-time APIs",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Optimization",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Cloud & Integrations",
     icon: creator,
   },
 ];
 
-const technologies: TTechnology[] = [
+const skillGroups: TSkillGroup[] = [
   {
-    name: "HTML 5",
-    icon: html,
+    title: "Backend",
+    skills: ["PHP", "Laravel", "REST APIs", "Real-time chat", "Security"],
   },
   {
-    name: "CSS 3",
-    icon: css,
+    title: "Data & payments",
+    skills: ["MySQL", "SQL Server", "Stripe", "Third-party APIs"],
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    title: "Cloud & delivery",
+    skills: ["AWS S3", "AWS EC2", "Route 53", "AWS RDS", "GitHub", "GitLab"],
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    title: "Workflow",
+    skills: ["Postman", "MySQL Workbench", "VS Code", "Basecamp", "Trello", "Slack"],
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    title: "AI-assisted development",
+    skills: ["ChatGPT", "Claude", "Gemini"],
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    title: "Environments",
+    skills: ["macOS", "Ubuntu", "Windows"],
   },
 ];
 
 const experiences: TExperience[] = [
   {
-    title: "React.js Developer",
-    companyName: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "Laravel Developer",
+    companyName: "Yudiz Solutions — Ahmedabad",
+    marker: "YS",
+    date: "2022 - 2026",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and maintained scalable web applications with Laravel.",
+      "Built RESTful APIs for mobile app teams and implemented real-time chat using sockets.",
+      "Collaborated with cross-functional teams to deliver projects on schedule.",
+      "Migrated 12 applications to Laravel, improving maintainability and performance.",
     ],
   },
   {
-    title: "React Native Developer",
-    companyName: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: "Laravel Developer",
+    companyName: "Alakmalak Technologies",
+    marker: "AT",
+    date: "2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Worked on administration panels and core PHP applications.",
+      "Built practical foundations in Laravel application development and backend workflows.",
     ],
-  },
-  {
-    title: "Web Developer",
-    companyName: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    companyName: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-];
-
-const testimonials: TTestimonial[] = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "Scalable Laravel Applications",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Maintainable web applications designed around clear domain logic, secure access, and reliable performance as products grow.",
     tags: [
       {
-        name: "react",
+        name: "laravel",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "php",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "security",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "APIs & Real-time Features",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "REST endpoints, mobile-app data exchange, socket-based chat, and third-party integrations built for dependable communication.",
     tags: [
       {
-        name: "react",
+        name: "rest-api",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "sockets",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "integrations",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Payments, Data & Cloud",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Stripe payment workflows, relational databases, and AWS infrastructure spanning storage, compute, DNS, and managed databases.",
     tags: [
       {
-        name: "nextjs",
+        name: "stripe",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "mysql",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "aws",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, skillGroups, experiences, projects };

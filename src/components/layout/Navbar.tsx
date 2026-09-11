@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
-import { logo, menu, close } from "../../assets";
+import { menu, close } from "../../assets";
 import { config } from "../../constants/config";
 
 const Navbar = () => {
@@ -13,35 +12,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-        setActive("");
-      }
+      setScrolled(window.scrollY > 60);
+      if (window.scrollY <= 60) setActive("");
     };
 
-    window.addEventListener("scroll", handleScroll);
-
     const navbarHighlighter = () => {
-      const sections = document.querySelectorAll("section[id]");
-
-      sections.forEach((current) => {
+      document.querySelectorAll("section[id]").forEach((current) => {
         const sectionId = current.getAttribute("id");
-        // @ts-ignore
-        const sectionHeight = current.offsetHeight;
-        const sectionTop =
-          current.getBoundingClientRect().top - sectionHeight * 0.2;
+        const section = current as HTMLElement;
+        const sectionTop = current.getBoundingClientRect().top - section.offsetHeight * 0.2;
 
-        if (sectionTop < 0 && sectionTop + sectionHeight > 0) {
+        if (sectionTop < 0 && sectionTop + section.offsetHeight > 0) {
           setActive(sectionId);
         }
       });
     };
 
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("scroll", navbarHighlighter);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("scroll", navbarHighlighter);
@@ -50,66 +38,72 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} fixed top-0 z-20 flex w-full items-center py-4 transition-all ${
+        scrolled ? "bg-primary/90 shadow-xl backdrop-blur-xl" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
+        <a
+          href="#top"
+          className="flex items-center gap-3"
+          onClick={() => window.scrollTo(0, 0)}
         >
-          <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            {config.html.title}
+          <span className="brand-mark" aria-hidden="true">HK</span>
+          <p className="cursor-pointer text-[18px] font-bold text-white">
+            {config.html.fullName}
           </p>
-        </Link>
+        </a>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.id ? "text-white" : "text-secondary"
-              } cursor-pointer text-[18px] font-medium hover:text-white`}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-7 lg:flex">
+          <ul className="flex list-none flex-row gap-7">
+            {navLinks.map((nav) => (
+              <li
+                key={nav.id}
+                className={`cursor-pointer text-[16px] font-medium transition-colors hover:text-white ${
+                  active === nav.id ? "text-white" : "text-secondary"
+                }`}
+              >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+          <a className="nav-resume" href={config.html.resumePath} download>
+            Résumé
+          </a>
+        </div>
 
-        <div className="flex flex-1 items-center justify-end sm:hidden">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="h-[28px] w-[28px] object-contain"
+        <div className="flex flex-1 items-center justify-end lg:hidden">
+          <button
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={toggle}
             onClick={() => setToggle(!toggle)}
-          />
+          >
+            <img src={toggle ? close : menu} alt="" className="h-7 w-7 object-contain" />
+          </button>
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
+            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[210px] rounded-xl p-6 shadow-2xl`}
           >
             <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
+                  className={`cursor-pointer text-[16px] font-medium ${
                     active === nav.id ? "text-white" : "text-secondary"
                   }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
+                  onClick={() => setToggle(false)}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li>
+                <a className="text-accent font-semibold" href={config.html.resumePath} download>
+                  Download résumé
+                </a>
+              </li>
             </ul>
           </div>
         </div>

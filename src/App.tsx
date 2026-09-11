@@ -1,5 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
-
 import {
   About,
   Contact,
@@ -22,23 +20,21 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="bg-primary relative z-0">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
+    <div className="bg-primary relative z-0 overflow-hidden">
+      <div id="top" className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+        <Navbar />
+        <Hero />
       </div>
-    </BrowserRouter>
+      <About />
+      <Experience />
+      <Tech />
+      <Works />
+      <Feedbacks />
+      <div className="relative z-0">
+        <Contact />
+        <StarsCanvas />
+      </div>
+    </div>
   );
 };
 

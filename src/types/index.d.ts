@@ -6,17 +6,10 @@ export type TCommonProps = {
 
 export type TExperience = {
   companyName: string;
-  iconBg: string;
   date: string;
   points: string[];
-} & Required<Omit<TCommonProps, "name">>;
-
-export type TTestimonial = {
-  testimonial: string;
-  designation: string;
-  company: string;
-  image: string;
-} & Required<Pick<TCommonProps, "name">>;
+  marker: string;
+} & Required<Pick<TCommonProps, "title">>;
 
 export type TProject = {
   description: string;
@@ -24,17 +17,18 @@ export type TProject = {
     name: string;
     color: string;
   }[];
-  image: string;
-  sourceCodeLink: string;
 } & Required<Pick<TCommonProps, "name">>;
-
-export type TTechnology = Required<Omit<TCommonProps, "title">>;
 
 export type TNavLink = {
   id: string;
 } & Required<Pick<TCommonProps, "title">>;
 
 export type TService = Required<Omit<TCommonProps, "name">>;
+
+export type TSkillGroup = {
+  title: string;
+  skills: string[];
+};
 
 export type TMotion = {
   direction: "up" | "down" | "left" | "right" | "";

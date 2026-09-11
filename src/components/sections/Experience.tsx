@@ -16,19 +16,17 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background: "#111a32",
         color: "#fff",
+        boxShadow: "0 20px 60px rgba(0, 0, 0, 0.25)",
+        border: "1px solid rgba(98, 232, 189, 0.13)",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid #111a32" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: "#62e8bd", color: "#07101f" }}
       icon={
-        <div className="flex h-full w-full items-center justify-center">
-          <img
-            src={experience.icon}
-            alt={experience.companyName}
-            className="h-[60%] w-[60%] object-contain"
-          />
+        <div className="flex h-full w-full items-center justify-center text-sm font-black">
+          {experience.marker}
         </div>
       }
     >
@@ -46,7 +44,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 pl-1 text-[14px] tracking-wider"
+            className="text-white-100 pl-1 text-[15px] leading-7"
           >
             {point}
           </li>

@@ -9,6 +9,9 @@ type TConfig = {
     title: string;
     fullName: string;
     email: string;
+    phone: string;
+    location: string;
+    resumePath: string;
   };
   hero: {
     name: string;
@@ -35,22 +38,29 @@ type TConfig = {
     experience: TSection;
     feedbacks: TSection;
     works: Required<TSection>;
+    skills: TSection;
   };
 };
 
 export const config: TConfig = {
   html: {
-    title: "John Doe — 3D Portfolio",
-    fullName: "John Doe",
-    email: "johndoe@mail.com",
+    title: "Hardik Kanzariya | Laravel Developer",
+    fullName: "Hardik Kanzariya",
+    email: "kanzariyahardik8511@gmail.com",
+    phone: "+91 7046130837",
+    location: "Botad, Gujarat, India",
+    resumePath: "./Hardik-Kanzariya-Resume.pdf",
   },
   hero: {
-    name: "John Doe",
-    p: ["I develop 3D visuals, user", "interfaces and web applications"],
+    name: "Hardik Kanzariya",
+    p: [
+      "PHP / Laravel developer with 5+ years of experience",
+      "building scalable web applications, APIs, and cloud solutions.",
+    ],
   },
   contact: {
-    p: "Get in touch",
-    h2: "Contact.",
+    p: "Let’s work together",
+    h2: "Start a conversation.",
     form: {
       name: {
         span: "Your Name",
@@ -65,30 +75,26 @@ export const config: TConfig = {
   },
   sections: {
     about: {
-      p: "Introduction",
-      h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      p: "Professional summary",
+      h2: "Backend-focused. Business-ready.",
+      content: `I build dependable PHP and Laravel products, from database-backed web applications and REST APIs to payment, real-time, and third-party integrations. My work spans backend optimization, application security, MySQL and SQL Server, and AWS services including S3, EC2, Route 53, and RDS. I collaborate comfortably with app, product, and cross-functional teams to ship maintainable solutions on time.`,
     },
     experience: {
-      p: "What I have done so far",
+      p: "5+ years in software development",
       h2: "Work Experience.",
     },
     feedbacks: {
-      p: "What others say",
-      h2: "Testimonials.",
+      p: "Education, languages, and interests",
+      h2: "Beyond the code.",
     },
     works: {
-      p: "My work",
-      h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      p: "How I can help",
+      h2: "Selected Expertise.",
+      content: `I help teams and clients turn backend requirements into secure, maintainable software. My strongest work sits where application logic, APIs, databases, cloud infrastructure, and external services meet.`,
+    },
+    skills: {
+      p: "Tools I use to deliver",
+      h2: "Technical Skills.",
     },
   },
 };

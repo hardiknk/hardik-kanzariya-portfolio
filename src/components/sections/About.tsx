@@ -18,19 +18,19 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
   <Tilt
     glareEnable
     tiltEnable
-    tiltMaxAngleX={30}
-    tiltMaxAngleY={30}
+    tiltMaxAngleX={10}
+    tiltMaxAngleY={10}
     glareColor="#aaa6c3"
   >
-    <div className="max-w-[250px] w-full xs:w-[250px]">
+    <div className="w-full">
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
         className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
       >
-        <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
+        <div className="bg-tertiary flex min-h-[220px] flex-col items-center justify-center gap-7 rounded-[20px] px-8 py-7">
           <img
             src={icon}
-            alt="web-development"
+            alt=""
             className="h-16 w-16 object-contain"
           />
 
@@ -55,7 +55,7 @@ const About = () => {
         {config.sections.about.content}
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

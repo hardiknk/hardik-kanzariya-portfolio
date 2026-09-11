@@ -1,66 +1,57 @@
 import { motion } from "framer-motion";
 
-import { styles } from "../../constants/styles";
+import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
-import { testimonials } from "../../constants";
 import { Header } from "../atoms/Header";
-import { TTestimonial } from "../../types";
 import { config } from "../../constants/config";
-
-const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
-  index,
-  testimonial,
-  name,
-  designation,
-  company,
-  image,
-}) => (
-  <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 xs:w-[320px] w-full rounded-3xl p-10"
-  >
-    <p className="text-[48px] font-black text-white">"</p>
-
-    <div className="mt-1">
-      <p className="text-[18px] tracking-wider text-white">{testimonial}</p>
-
-      <div className="mt-7 flex items-center justify-between gap-1">
-        <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-white">
-            <span className="blue-text-gradient">@</span> {name}
-          </p>
-          <p className="text-secondary mt-1 text-[12px]">
-            {designation} of {company}
-          </p>
-        </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className="h-10 w-10 rounded-full object-cover"
-        />
-      </div>
-    </div>
-  </motion.div>
-);
 
 const Feedbacks = () => {
   return (
-    <div className="bg-black-100 mt-12 rounded-[20px]">
-      <div
-        className={`${styles.padding} bg-tertiary min-h-[300px] rounded-2xl`}
-      >
-        <Header useMotion={true} {...config.sections.feedbacks} />
+    <>
+      <Header useMotion={true} {...config.sections.feedbacks} />
+      <div className="mt-14 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+        <motion.article
+          variants={fadeIn("right", "spring", 0.1, 0.75)}
+          className="profile-panel"
+        >
+          <p className="section-kicker">Education</p>
+          <h3 className="mt-4 text-2xl font-bold text-white">
+            Bachelor of Technology in Computer Engineering
+          </h3>
+          <p className="mt-2 text-lg text-secondary">RK University, Rajkot</p>
+          <p className="text-accent mt-4 font-semibold">2016 - 2020</p>
+
+          <div className="mt-8 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
+            <div>
+              <p className="font-semibold text-white">12th Standard · Science</p>
+              <p className="mt-1 text-sm text-secondary">Shree MD Shah Vidyalay, Botad · 2014 - 2016</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">10th Standard</p>
+              <p className="mt-1 text-sm text-secondary">Shree Khas Madhyamik Shala · July 2014</p>
+            </div>
+          </div>
+        </motion.article>
+
+        <motion.div variants={fadeIn("left", "spring", 0.2, 0.75)} className="grid gap-6">
+          <article className="profile-panel">
+            <p className="section-kicker">Languages</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {['English', 'Hindi', 'Gujarati'].map((language) => (
+                <span className="skill-pill" key={language}>{language}</span>
+              ))}
+            </div>
+          </article>
+          <article className="profile-panel">
+            <p className="section-kicker">Interests</p>
+            <p className="mt-4 leading-7 text-secondary">
+              Swimming and continuously learning new AI tools for practical software development.
+            </p>
+          </article>
+        </motion.div>
       </div>
-      <div
-        className={`${styles.paddingX} -mt-20 flex flex-wrap gap-7 pb-14 max-sm:justify-center`}
-      >
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
-export default Feedbacks;
+export default SectionWrapper(Feedbacks, "education");

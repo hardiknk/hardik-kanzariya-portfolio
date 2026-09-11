@@ -1,50 +1,87 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../../constants/styles";
-import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
 
 const Hero = () => {
   return (
-    <section className={`relative mx-auto h-screen w-full`}>
+    <section className="relative mx-auto min-h-screen w-full overflow-hidden">
       <div
-        className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`mx-auto flex min-h-screen max-w-7xl items-center ${styles.paddingX} pb-20 pt-28`}
       >
-        <div className="mt-5 flex flex-col items-center justify-center">
-          <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
-          <div className="violet-gradient h-40 w-1 sm:h-80" />
-        </div>
+        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="mb-7 flex flex-wrap gap-3">
+              <span className="availability-chip">Open to remote</span>
+              <span className="availability-chip">Open to onsite</span>
+              <span className="availability-chip">Available for freelance</span>
+            </div>
+            <p className="text-accent mb-3 text-sm font-semibold uppercase tracking-[0.24em] sm:text-base">
+              Software Developer · PHP / Laravel
+            </p>
+            <h1 className={`${styles.heroHeadText} max-w-4xl text-white`}>
+              Hi, I&apos;m <span className="text-[#62e8bd]">{config.hero.name}</span>
+            </h1>
+            <p className={`${styles.heroSubText} text-white-100 mt-5 max-w-3xl`}>
+              {config.hero.p[0]} <br className="hidden sm:block" />
+              {config.hero.p[1]}
+            </p>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
-          </h1>
-          <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            {config.hero.p[0]} <br className="hidden sm:block" />
-            {config.hero.p[1]}
-          </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a className="primary-cta" href="#contact">
+                Discuss an opportunity
+              </a>
+              <a className="secondary-cta" href={config.html.resumePath} download>
+                Download résumé
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-secondary sm:text-base">
+              <span>5+ years&apos; experience</span>
+              <span>12 Laravel migrations delivered</span>
+              <span>{config.html.location}</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.75, delay: 0.15 }}
+            className="relative mx-auto w-full max-w-[430px]"
+          >
+            <div className="portrait-glow" />
+            <div className="portrait-frame">
+              <img
+                src="./hardik-kanzariya.png"
+                alt="Hardik Kanzariya"
+                className="aspect-[3/4] h-full w-full object-cover object-top"
+              />
+              <div className="portrait-caption">
+                <span>Laravel · APIs · AWS</span>
+                <span className="text-accent">Available</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      <ComputersCanvas />
-
-      <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
-        <a href="#about">
-          <div className="border-secondary flex h-[64px] w-[35px] items-start justify-center rounded-3xl border-4 p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="bg-secondary mb-1 h-3 w-3 rounded-full"
-            />
-          </div>
-        </a>
-      </div>
+      <a
+        href="#about"
+        aria-label="Scroll to professional summary"
+        className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 sm:block"
+      >
+        <motion.span
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="block text-2xl text-secondary"
+        >
+          ↓
+        </motion.span>
+      </a>
     </section>
   );
 };
