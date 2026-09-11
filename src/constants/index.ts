@@ -1,163 +1,173 @@
-import type {
-  TNavLink,
-  TService,
-  TExperience,
-  TProject,
-  TSkillGroup,
-} from "../types";
+import type { TNavLink, TService, TExperience, TProject, TSkillGroup } from '../types';
 
-import { mobile, backend, creator, web } from "../assets";
+import { mobile, backend, creator, web } from '../assets';
 
 export const navLinks: TNavLink[] = [
   {
-    id: "about",
-    title: "About",
+    id: 'about',
+    title: 'About',
   },
   {
-    id: "work",
-    title: "Experience",
+    id: 'work',
+    title: 'Experience',
   },
   {
-    id: "skills",
-    title: "Skills",
+    id: 'skills',
+    title: 'Skills',
   },
   {
-    id: "expertise",
-    title: "Expertise",
+    id: 'projects',
+    title: 'Projects',
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: 'contact',
+    title: 'Contact',
   },
 ];
 
 const services: TService[] = [
   {
-    title: "Laravel Applications",
+    title: 'Laravel Applications',
     icon: web,
   },
   {
-    title: "REST & Real-time APIs",
+    title: 'REST & Real-time APIs',
     icon: mobile,
   },
   {
-    title: "Backend Optimization",
+    title: 'Backend Optimization',
     icon: backend,
   },
   {
-    title: "Cloud & Integrations",
+    title: 'Cloud & Integrations',
     icon: creator,
   },
 ];
 
 const skillGroups: TSkillGroup[] = [
   {
-    title: "Backend",
-    skills: ["PHP", "Laravel", "REST APIs", "Real-time chat", "Security"],
+    title: 'Backend',
+    skills: ['PHP', 'Laravel', 'REST APIs', 'Real-time chat', 'Security'],
   },
   {
-    title: "Data & payments",
-    skills: ["MySQL", "SQL Server", "Stripe", "Third-party APIs"],
+    title: 'Data & payments',
+    skills: ['MySQL', 'SQL Server', 'Stripe', 'Third-party APIs'],
   },
   {
-    title: "Cloud & delivery",
-    skills: ["AWS S3", "AWS EC2", "Route 53", "AWS RDS", "GitHub", "GitLab"],
+    title: 'Cloud & delivery',
+    skills: ['AWS S3', 'AWS EC2', 'Route 53', 'AWS RDS', 'GitHub', 'GitLab'],
   },
   {
-    title: "Workflow",
-    skills: ["Postman", "MySQL Workbench", "VS Code", "Basecamp", "Trello", "Slack"],
+    title: 'Workflow',
+    skills: ['Postman', 'MySQL Workbench', 'VS Code', 'Basecamp', 'Trello', 'Slack'],
   },
   {
-    title: "AI-assisted development",
-    skills: ["ChatGPT", "Claude", "Gemini"],
+    title: 'AI-assisted development',
+    skills: ['ChatGPT', 'Claude', 'Gemini'],
   },
   {
-    title: "Environments",
-    skills: ["macOS", "Ubuntu", "Windows"],
+    title: 'Environments',
+    skills: ['macOS', 'Ubuntu', 'Windows'],
   },
 ];
 
 const experiences: TExperience[] = [
   {
-    title: "Laravel Developer",
-    companyName: "Yudiz Solutions — Ahmedabad",
-    marker: "YS",
-    date: "2022 - 2026",
+    title: 'Laravel Developer',
+    companyName: 'Yudiz Solutions — Ahmedabad',
+    marker: 'YS',
+    date: '2022 - 2026',
     points: [
-      "Developed and maintained scalable web applications with Laravel.",
-      "Built RESTful APIs for mobile app teams and implemented real-time chat using sockets.",
-      "Collaborated with cross-functional teams to deliver projects on schedule.",
-      "Migrated 12 applications to Laravel, improving maintainability and performance.",
+      'Developed and maintained scalable web applications with Laravel.',
+      'Built RESTful APIs for mobile app teams and implemented real-time chat using sockets.',
+      'Collaborated with cross-functional teams to deliver projects on schedule.',
+      'Migrated 12 applications to Laravel, improving maintainability and performance.',
     ],
   },
   {
-    title: "Laravel Developer",
-    companyName: "Alakmalak Technologies",
-    marker: "AT",
-    date: "2021",
+    title: 'Laravel Developer',
+    companyName: 'Alakmalak Technologies',
+    marker: 'AT',
+    date: '2021',
     points: [
-      "Worked on administration panels and core PHP applications.",
-      "Built practical foundations in Laravel application development and backend workflows.",
+      'Worked on administration panels and core PHP applications.',
+      'Built practical foundations in Laravel application development and backend workflows.',
     ],
   },
 ];
 
 const projects: TProject[] = [
   {
-    name: "Scalable Laravel Applications",
+    name: 'WeWrite',
+    category: 'AI-assisted collaborative writing platform',
     description:
-      "Maintainable web applications designed around clear domain logic, secure access, and reliable performance as products grow.",
+      'A React Native application where users create digital books and write them collaboratively through controlled, turn-based contributions.',
+    responsibilities: [
+      'Developed the Laravel administration panel and REST APIs used by the React Native application.',
+      'Implemented book settings for contributor count, writing duration, contribution limits, and writing rounds.',
+      'Built the turn-based contribution workflow and book-owner editing controls.',
+      'Integrated the OpenAI API to generate story content from a book title and contributor descriptions.',
+    ],
+    challenge:
+      'Keeping every contributor in the correct writing sequence while enforcing time, round, and content limits across a shared book.',
+    outcome:
+      'Delivered a structured collaborative-writing workflow with owner moderation and AI-assisted story generation.',
     tags: [
-      {
-        name: "laravel",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "php",
-        color: "green-text-gradient",
-      },
-      {
-        name: "security",
-        color: "pink-text-gradient",
-      },
+      { name: 'Laravel' },
+      { name: 'REST APIs' },
+      { name: 'React Native' },
+      { name: 'OpenAI API' },
     ],
   },
   {
-    name: "APIs & Real-time Features",
+    name: 'One Percentage',
+    category: 'Subscription-based learning platform',
     description:
-      "REST endpoints, mobile-app data exchange, socket-based chat, and third-party integrations built for dependable communication.",
+      'A mobile learning platform offering six subscription-based courses with video lectures, progress tracking, referrals, and direct communication with administrators.',
+    responsibilities: [
+      'Developed the Laravel admin panel and REST APIs for the React Native application.',
+      'Implemented course, lecture, subscription, progress, and referral-reporting workflows.',
+      'Built real-time socket communication between users and administrators.',
+      'Created a custom roles and permissions implementation without relying on a third-party package.',
+      'Implemented chunked video uploads to Amazon S3 and supported deployment on AWS.',
+    ],
+    challenge:
+      'Large lecture videos exceeded standard PHP request and upload limits, making single-request uploads unreliable.',
+    outcome:
+      'Enabled reliable large-video delivery by uploading files in smaller chunks while preserving subscription-based course access.',
     tags: [
-      {
-        name: "rest-api",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "sockets",
-        color: "green-text-gradient",
-      },
-      {
-        name: "integrations",
-        color: "pink-text-gradient",
-      },
+      { name: 'Laravel' },
+      { name: 'React Native' },
+      { name: 'WebSockets' },
+      { name: 'AWS S3' },
+      { name: 'Chunked uploads' },
     ],
   },
   {
-    name: "Payments, Data & Cloud",
+    name: 'Coaching Centre Management Platform',
+    category: 'Location-based, multi-portal sports coaching platform',
     description:
-      "Stripe payment workflows, relational databases, and AWS infrastructure spanning storage, compute, DNS, and managed databases.",
+      'A platform connecting students with nearby sports coaching centres through separate student, coaching-centre, staff, and super-admin applications.',
+    responsibilities: [
+      'Developed the shared Laravel backend, REST APIs, and Blade-based administration portals.',
+      'Converted static HTML and CSS designs into dynamic Laravel Blade interfaces.',
+      'Implemented centre registration and approval, sport and distance filtering, enrolment, attendance, activities, and video workflows.',
+      'Built Razorpay fee collection, booking-based and standard commission calculations, and centre settlement workflows.',
+      'Integrated Amazon S3 for videos and Firebase Cloud Messaging for push notifications.',
+      'Mentored a junior developer through task assignment, service-pattern guidance, reusable helpers, debugging, and GitHub pull-request reviews.',
+    ],
+    challenge:
+      'Maintaining consistent data and business workflows across independently accessed portals with separate URLs, dashboards, and authentication systems.',
+    outcome:
+      'Delivered one connected platform for discovery, approval, payments, commissions, attendance, media, staff operations, and student progress.',
     tags: [
-      {
-        name: "stripe",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mysql",
-        color: "green-text-gradient",
-      },
-      {
-        name: "aws",
-        color: "pink-text-gradient",
-      },
+      { name: 'Laravel' },
+      { name: 'Blade' },
+      { name: 'React Native' },
+      { name: 'Razorpay' },
+      { name: 'AWS S3' },
+      { name: 'Firebase' },
+      { name: 'Haversine' },
     ],
   },
 ];

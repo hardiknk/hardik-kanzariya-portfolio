@@ -9,21 +9,24 @@ export type TExperience = {
   date: string;
   points: string[];
   marker: string;
-} & Required<Pick<TCommonProps, "title">>;
+} & Required<Pick<TCommonProps, 'title'>>;
 
 export type TProject = {
+  category: string;
   description: string;
+  responsibilities: string[];
+  challenge: string;
+  outcome: string;
   tags: {
     name: string;
-    color: string;
   }[];
-} & Required<Pick<TCommonProps, "name">>;
+} & Required<Pick<TCommonProps, 'name'>>;
 
 export type TNavLink = {
   id: string;
-} & Required<Pick<TCommonProps, "title">>;
+} & Required<Pick<TCommonProps, 'title'>>;
 
-export type TService = Required<Omit<TCommonProps, "name">>;
+export type TService = Required<Omit<TCommonProps, 'name'>>;
 
 export type TSkillGroup = {
   title: string;
@@ -31,8 +34,8 @@ export type TSkillGroup = {
 };
 
 export type TMotion = {
-  direction: "up" | "down" | "left" | "right" | "";
-  type: "tween" | "spring" | "just" | "";
+  direction: 'up' | 'down' | 'left' | 'right' | '';
+  type: 'tween' | 'spring' | 'just' | '';
   delay: number;
   duration: number;
 };

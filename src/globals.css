@@ -172,7 +172,7 @@ button:focus-visible {
 }
 
 .skill-card,
-.expertise-card,
+.case-study-card,
 .profile-panel,
 .contact-panel {
   border: 1px solid rgba(174, 187, 208, 0.13);
@@ -187,15 +187,70 @@ button:focus-visible {
   padding: 30px;
 }
 
-.expertise-card {
+.case-study-card {
+  padding: 30px;
   transition:
     transform 180ms ease,
     border-color 180ms ease;
 }
 
-.expertise-card:hover {
+.case-study-card:hover {
   transform: translateY(-5px);
   border-color: rgba(98, 232, 189, 0.36);
+}
+
+.confidential-badge,
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.confidential-badge {
+  border: 1px solid rgba(174, 187, 208, 0.16);
+  padding: 8px 12px;
+  color: #aebbd0;
+  background: rgba(7, 16, 31, 0.48);
+}
+
+.project-tag {
+  border: 1px solid rgba(98, 232, 189, 0.16);
+  padding: 8px 11px;
+  color: #dce8f5;
+  background: rgba(98, 232, 189, 0.07);
+}
+
+.case-study-point {
+  position: relative;
+  padding-left: 24px;
+  color: #dce8f5;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.case-study-point::before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #62e8bd;
+  content: '';
+}
+
+.case-study-note {
+  border: 1px solid rgba(174, 187, 208, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  background: rgba(7, 16, 31, 0.4);
+}
+
+.case-study-outcome {
+  border-color: rgba(98, 232, 189, 0.18);
+  background: rgba(98, 232, 189, 0.05);
 }
 
 .skill-pill {
@@ -252,6 +307,7 @@ button:focus-visible {
   }
 
   .skill-card,
+  .case-study-card,
   .profile-panel,
   .contact-panel {
     padding: 24px;

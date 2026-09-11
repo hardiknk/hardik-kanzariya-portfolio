@@ -113,9 +113,9 @@ export const config: TConfig = {
       h2: 'Beyond the code.',
     },
     works: {
-      p: 'How I can help',
-      h2: 'Selected Expertise.',
-      content: `I help teams and clients turn backend requirements into secure, maintainable software. My strongest work sits where application logic, APIs, databases, cloud infrastructure, and external services meet.`,
+      p: 'Selected professional work',
+      h2: 'Project Case Studies.',
+      content: `These anonymized case studies show how I approach backend architecture, application workflows, integrations, and team delivery. Client information, source code, screenshots, and live links remain confidential.`,
     },
     skills: {
       p: 'Tools I use to deliver',
