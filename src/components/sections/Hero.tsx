@@ -4,12 +4,18 @@ import { styles } from '../../constants/styles';
 import { config } from '../../constants/config';
 
 const Hero = () => {
+  const showProfileImage = config.profileImage.mode !== 'hidden';
+
   return (
     <section className="relative mx-auto min-h-screen w-full overflow-hidden">
       <div
         className={`mx-auto flex min-h-screen max-w-7xl items-center ${styles.paddingX} pb-20 pt-28`}
       >
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+        <div
+          className={`grid w-full items-center gap-12 ${
+            showProfileImage ? 'lg:grid-cols-[1.15fr_0.85fr]' : ''
+          }`}
+        >
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,25 +73,38 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.75, delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[430px]"
-          >
-            <div className="portrait-glow" />
-            <div className="portrait-frame">
-              <img
-                src="./hardik-kanzariya.png"
-                alt="Hardik Kanzariya"
-                className="aspect-[3/4] h-full w-full object-cover object-top"
-              />
-              <div className="portrait-caption">
-                <span>Laravel · APIs · AWS</span>
-                <span className="text-accent">Available</span>
+          {showProfileImage && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.75, delay: 0.15 }}
+              className="relative mx-auto w-full max-w-[430px]"
+            >
+              <div className="portrait-glow" />
+              <div className="portrait-frame">
+                {config.profileImage.mode === 'photo' ? (
+                  <img
+                    src={config.profileImage.path}
+                    alt="Hardik Kanzariya"
+                    className="aspect-[3/4] h-full w-full object-cover object-top"
+                  />
+                ) : (
+                  <div
+                    className="portrait-placeholder aspect-[3/4]"
+                    role="img"
+                    aria-label="Hardik Kanzariya profile placeholder"
+                  >
+                    <span>HK</span>
+                    <p>Senior Web Developer</p>
+                  </div>
+                )}
+                <div className="portrait-caption">
+                  <span>Laravel · APIs · AWS</span>
+                  <span className="text-accent">Available</span>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
         </div>
       </div>
 

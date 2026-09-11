@@ -4,6 +4,8 @@ type TSection = {
   content?: string;
 };
 
+type TProfileImageMode = 'photo' | 'placeholder' | 'hidden';
+
 type TConfig = {
   html: {
     title: string;
@@ -16,6 +18,10 @@ type TConfig = {
   hero: {
     name: string;
     p: string[];
+  };
+  profileImage: {
+    mode: TProfileImageMode;
+    path: string;
   };
   availability: {
     status: string;
@@ -54,6 +60,16 @@ type TConfig = {
 
 const envValue = (value: string | undefined, fallback: string) => value?.trim() || fallback;
 
+const profileImageMode = (value: string | undefined): TProfileImageMode => {
+  const mode = value?.trim().toLowerCase();
+
+  if (mode === 'placeholder' || mode === 'hidden') {
+    return mode;
+  }
+
+  return 'photo';
+};
+
 export const config: TConfig = {
   html: {
     title: 'Hardik Kanzariya | Senior Laravel Developer',
@@ -69,6 +85,10 @@ export const config: TConfig = {
       'Laravel developer with 5+ years of experience',
       'building scalable applications, designing APIs, and supporting team delivery.',
     ],
+  },
+  profileImage: {
+    mode: profileImageMode(import.meta.env.VITE_PROFILE_IMAGE_MODE),
+    path: envValue(import.meta.env.VITE_PROFILE_IMAGE_PATH, './hardik-kanzariya.jpg'),
   },
   availability: {
     status: envValue(import.meta.env.VITE_AVAILABILITY_STATUS, 'Available within 7 days'),

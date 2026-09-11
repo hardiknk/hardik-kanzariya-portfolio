@@ -171,6 +171,40 @@ button:focus-visible {
   backdrop-filter: blur(14px);
 }
 
+.portrait-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 420px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(98, 232, 189, 0.24), transparent 34%),
+    linear-gradient(145deg, #152342, #09152a);
+}
+
+.portrait-placeholder span {
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  border: 1px solid rgba(98, 232, 189, 0.42);
+  border-radius: 30px;
+  color: #62e8bd;
+  background: rgba(98, 232, 189, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.portrait-placeholder p {
+  color: #d9e3f3;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .skill-card,
 .case-study-card,
 .profile-panel,
