@@ -79,7 +79,7 @@ export const config: TConfig = {
     timezone: envValue(import.meta.env.VITE_REMOTE_TIMEZONE, 'Flexible across time zones'),
     targetRole: envValue(
       import.meta.env.VITE_TARGET_ROLE,
-      'Senior Laravel Developer / Technical Lead'
+      'Senior Web Developer (Laravel)'
     ),
   },
   social: {

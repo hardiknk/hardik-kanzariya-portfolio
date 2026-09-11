@@ -21,7 +21,7 @@ const Hero = () => {
               <span className="availability-chip">Freelance projects welcome</span>
             </div>
             <p className="text-accent mb-3 text-sm font-semibold uppercase tracking-[0.24em] sm:text-base">
-              {config.availability.targetRole} · PHP / Laravel
+              {config.availability.targetRole}
             </p>
             <h1 className={`${styles.heroHeadText} max-w-4xl text-white`}>
               Hi, I&apos;m <span className="text-[#62e8bd]">{config.hero.name}</span>
